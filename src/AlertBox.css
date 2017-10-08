@@ -1,0 +1,44 @@
+.js-hidden{
+    display: none !important;
+}
+
+.js-left{
+    float:left;
+}
+
+.js-right{
+    float:right;
+}
+
+.success{
+    background-color: #1bf51b
+}
+
+.error{
+    background-color : #ff0000;
+}
+
+.info{
+    background-color : #ffb020
+}
+
+.js-alertbox-container{
+    /* border: 1px solid black; */
+    border-radius : 8px;
+    padding: 10px;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-flex;
+}
+
+.js-alertbox-body{
+    font-weight: bold;
+}
+
+.js-alertbox-body .js-text{
+    color:white;    
+}
+
+.js-alertbox-body .js-close-button{
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+.js-hidden{
+    display: none;
+}
+.js-left{
+    float:left;
+}
+
+.js-right{
+    float:right;
+}
+
+.js-modal-container{
+    border:1px solid black;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.js-modal-title{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #1bf51b;
+}
+
+.js-modal-body{
+    padding: 20px;
+}
