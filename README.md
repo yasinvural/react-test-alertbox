@@ -2,5 +2,5 @@
 
 Development continues.
 
-it is basic react alertbox which are danger,success and info.
-to show and hide alert box , ReactCSSTransitionGroup is used.
+it is basic react alertbox which includes danger,success and info.
+To show and hide alertbox , ReactCSSTransitionGroup is used.
