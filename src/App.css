@@ -26,3 +26,26 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.row.js-row-container{
+  margin: 15px 0px;
+}
+
+.fade-enter{
+    opacity:0;
+}
+
+.fade-enter-active{
+  opacity:1;
+  transition: opacity 1000ms ease-out;
+}
+
+.fade-leave{
+    opacity:1;
+}
+
+.fade-leave-active{
+  opacity:0;
+  transition: opacity 1000ms ease-out;
+}

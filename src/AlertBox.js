@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import './AlertBox.css';
 
 export default class AlertBox extends Component{
+
+    
+
     render(){
         let type = this.props.type;
         let iconClass;
