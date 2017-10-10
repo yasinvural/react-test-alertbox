@@ -5,6 +5,7 @@ import './App.css';
 import AlertBox from './AlertBox';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -12,25 +13,7 @@ class App extends Component {
       "isModalOpen":false,
       "isAlertBoxOpen":false,
       "title": "başarılı" ,
-      "alertBox" : [{
-        "id":Date.now()+"1",
-        "title": "Başarılı",
-        "body": "İşleminiz başarıyla gerçekleşti.",
-        "type": "success",
-        "isOpen":false
-      },{
-        "id":Date.now()+"2",
-        "title": "Hata",
-        "body": "İşleminiz gerçekleşirken bir hata oluştu.",
-        "type": "error",
-        "isOpen":false
-      },{
-        "id":Date.now()+"3",
-        "title": "Bilgi",
-        "body": "İşleminizi gerçekleştirebilmek için eksik alanları doldurunuz.",
-        "type": "info",
-        "isOpen":false
-      }]
+      "alertBox" : []
     });
     this.alertButtonClick = this.alertButtonClick.bind(this);
     this.removeItemFromArray = this.removeItemFromArray.bind(this);
@@ -46,10 +29,16 @@ class App extends Component {
           "type": type,
           "isOpen":true          
         }]
-    })
+    },this.removeItemInOrder);
   }
 
-  removeItemFromArray(id){        
+  removeItemInOrder(){
+      setTimeout(()=>{
+          this.removeItemFromArray(this.state.alertBox[0].id);
+      },2000);
+  }
+
+  removeItemFromArray(id){            
       let index = this.state.alertBox.findIndex((el)=>{
           return el.id === id;
       });
@@ -107,12 +96,14 @@ class App extends Component {
         </div>
 
         <hr/>
+        <div className="deneme">
         <ReactCSSTransitionGroup
             transitionName="fade"
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}>
+
               {
-                this.state.alertBox.map( (item,index)=> {
+                this.state.alertBox.map((item,index)=> {
                   return(
                     <AlertBox   key={item.id} 
                                 id={item.id}
@@ -124,7 +115,11 @@ class App extends Component {
                   );
                 })
               }
+
         </ReactCSSTransitionGroup>
+        </div>
+
+
 
       </div>
     );

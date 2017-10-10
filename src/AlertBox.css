@@ -29,6 +29,9 @@
     margin: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: inline-flex;
+    /*position: absolute;
+    top: 0;
+    right: 0;*/
 
     /*-webkit-animation: fadein 3s; 
     -moz-animation: fadein 3s;
@@ -57,4 +60,3 @@
 .glyphicon-ok, .glyphicon-info-sign, .glyphicon-thumbs-down, .glyphicon-flash{
     font-size:3rem;
 }
-
