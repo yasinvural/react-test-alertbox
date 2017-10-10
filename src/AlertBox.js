@@ -13,10 +13,11 @@ export default class AlertBox extends Component{
                 iconClass = "glyphicon glyphicon-info-sign";
             break;
             case "success":
-                iconClass = "glyphicon glyphicon-thumbs-up";
+                iconClass = "glyphicon glyphicon-ok";
             break;
             case "error":
-                iconClass = "glyphicon glyphicon-thumbs-down"
+                iconClass = "glyphicon glyphicon-flash";
+                // iconClass = "glyphicon glyphicon-thumbs-down";
             break;
             default:
                 iconClass = "";
@@ -27,13 +28,13 @@ export default class AlertBox extends Component{
             <div className={`js-alertbox-container ${this.props.type} ${this.props.isopen ? "" : "js-hidden"}`}>
                 <div className="js-alertbox-body">
                     <div className="row">
-                        <div className="col-sm-4 js-icon js-left">
+                        <div className="col-sm-2 js-icon js-left">
                             <span className={`${iconClass}`}></span>
                         </div>
-                        <div className="col-sm-4 js-text">
+                        <div className="col-sm-8 js-text">
                             {this.props.body}
                         </div>
-                        <div className="col-sm-4 js-close-button js-right">
+                        <div className="col-sm-2 js-close-button js-right">
                             <span   onClick={()=>{this.props.handleClick(this.props.id)}} 
                                     className="glyphicon glyphicon-remove "></span>
                         </div>
