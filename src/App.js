@@ -77,7 +77,7 @@ class App extends Component {
 
         <div className="row js-row-container">
             <div className="col-sm-4">
-                <button className="btn btn-success" onClick={()=>{this.alertButtonClick("success")}}>Add Success Alert</button>  
+                <button className="btn btn-success"  onClick={()=>{this.alertButtonClick("success")}}>Add Success Alert</button>  
             </div>
         </div>
         <div className="row js-row-container">

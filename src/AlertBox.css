@@ -11,15 +11,18 @@
 }
 
 .success{
-    background-color: #1bf51b
+    /*background-color: #1bf51b*/
+    background: linear-gradient(to right, rgb(107, 191, 63) 0%, rgb(120, 229, 18) 100%);
 }
 
 .error{
-    background-color : #ff0000;
+    /*background-color : #ff0000;*/
+    background: linear-gradient(to right, rgb(186, 11, 11) 1%, rgb(252, 62, 15) 100%);
 }
 
 .info{
-    background-color : #ffb020
+    /*background-color : #ffb020*/
+    background: linear-gradient(to right, rgb(255, 127, 4) 0%, rgb(239, 167, 100) 100%);
 }
 
 .js-alertbox-container{
