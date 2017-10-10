@@ -96,27 +96,25 @@ class App extends Component {
         </div>
 
         <hr/>
-        <div className="deneme">
-        <ReactCSSTransitionGroup
-            transitionName="fade"
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000}>
-
-              {
-                this.state.alertBox.map((item,index)=> {
-                  return(
-                    <AlertBox   key={item.id} 
-                                id={item.id}
-                                isopen={item.isOpen} 
-                                title={item.title} 
-                                body={item.body} 
-                                type={item.type}
-                                handleClick={this.removeItemFromArray} />
-                  );
-                })
-              }
-
-        </ReactCSSTransitionGroup>
+        <div className="js-alertbox-show-container">
+          <ReactCSSTransitionGroup
+              transitionName="fade"
+              transitionEnterTimeout={1000}
+              transitionLeaveTimeout={1000}>
+                {
+                  this.state.alertBox.map((item,index)=> {
+                    return(
+                      <AlertBox   key={item.id} 
+                                  id={item.id}
+                                  isopen={item.isOpen} 
+                                  title={item.title} 
+                                  body={item.body} 
+                                  type={item.type}
+                                  handleClick={this.removeItemFromArray} />
+                    );
+                  })
+                }
+          </ReactCSSTransitionGroup>
         </div>
 
 
