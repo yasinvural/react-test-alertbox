@@ -55,8 +55,6 @@ class App extends Component {
         "alertBox": this.state.alertBox.filter((_, i) => i !== index)
       });
   }
-
-
   
   render() {
 
