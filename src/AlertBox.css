@@ -25,23 +25,11 @@
     background: linear-gradient(to right, rgb(255, 127, 4) 0%, rgb(239, 167, 100) 100%);
 }
 
-.js-alertbox-container{
-    /* border: 1px solid black; */
+.js-alertbox{
     border-radius : 8px;
     padding: 10px;
     margin: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: inline-flex;
-    /*position: absolute;
-    top: 0;
-    right: 0;*/
-
-    /*-webkit-animation: fadein 3s; 
-    -moz-animation: fadein 3s;
-    -ms-animation: fadein 3s; 
-    -o-animation: fadein 3s;
-    animation: fadein 3s;*/
-
 }
 
 .js-alertbox-body{

@@ -25,7 +25,7 @@ export default class AlertBox extends Component{
         }
 
         return(
-            <div className={`js-alertbox-container ${this.props.type} ${this.props.isopen ? "" : "js-hidden"}`}>
+            <div className={`js-alertbox ${this.props.type} ${this.props.isopen ? "" : "js-hidden"}`}>
                 <div className="js-alertbox-body">
                     <div className="row">
                         <div className="col-sm-2 js-icon js-left">

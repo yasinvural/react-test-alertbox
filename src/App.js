@@ -13,12 +13,20 @@ class App extends Component {
       "isModalOpen":false,
       "isAlertBoxOpen":false,
       "title": "başarılı" ,
+      "position":"top-right",
       "alertBox" : []
     });
     this.alertButtonClick = this.alertButtonClick.bind(this);
     this.removeItemFromArray = this.removeItemFromArray.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
   }
   
+  handleOptionChange(e){
+      this.setState({
+        "position": this.state.alertBox.length === 0 ? e.target.name : this.state.position
+      })
+  }
+
   alertButtonClick(type){
     this.setState({
         "alertBox": [
@@ -27,7 +35,7 @@ class App extends Component {
           // "title": document.getElementById("js-title").value,
           "body": document.getElementById("js-body").value ==="" ? "body" : document.getElementById("js-body").value,
           "type": type,
-          "isOpen":true          
+          "isOpen":true                   
         }]
     },this.removeItemInOrder);
   }
@@ -47,6 +55,8 @@ class App extends Component {
         "alertBox": this.state.alertBox.filter((_, i) => i !== index)
       });
   }
+
+
   
   render() {
 
@@ -57,43 +67,52 @@ class App extends Component {
           <h1 className="App-title">Welcome to React Alert Box</h1>
         </header>
 
-        {/*<div className="row js-row-container">
-            <div className="col-sm-6">
-                <div className="row js-row-container">
-                    <label className="col-sm-4">Title</label>
-                    <input className="col-sm-8" placeholder="does not need title for alertbox" id="js-title"  type="text" />
+        <div className="row">
+            <div className="col-sm-4 col-sm-push-4">
+                <div className="form-group">
+                    <label>Body</label>
+                    <input type="text" placeholder="type it" className="form-control text-center" id="js-body"/>
+                </div>
+                <div className="radio">
+                  <label><input type="radio" 
+                                name="top-right" 
+                                checked={this.state.position === "top-right"}
+                                onChange={this.handleOptionChange}/>Top right</label>
+                </div>
+                <div className="radio">
+                  <label><input type="radio" 
+                                name="top-left" 
+                                checked={this.state.position === "top-left"}
+                                onChange={this.handleOptionChange}/>Top left</label>
+                </div>
+                <div className="radio">
+                  <label><input type="radio" 
+                                name="bottom-right" 
+                                checked={this.state.position === "bottom-right"}
+                                onChange={this.handleOptionChange}/>Bottom right</label>
+                </div>
+                <div className="radio">
+                  <label><input type="radio" 
+                                name="bottom-left" 
+                                checked={this.state.position === "bottom-left"}
+                                onChange={this.handleOptionChange}/>Bottom left</label>
+                </div>
+                <div>
+                  <button className="btn btn-success"  onClick={()=>{this.alertButtonClick("success")}}>Add Success Alert</button> 
+                </div>
+                <div>
+                  <button className="btn btn-danger" onClick={()=>{this.alertButtonClick("error")}}>Add Error Alert</button>
+                </div>
+                <div>
+                  <button className="btn btn-warning" onClick={()=>{this.alertButtonClick("info")}}>Add Info Alert</button> 
                 </div>
             </div>
-        </div>*/}
 
-          <div className="row js-row-container">
-              <div className="col-sm-6">
-                  <div className="row js-row-container">
-                      <label className="col-sm-4">Body</label>
-                      <input className="col-sm-8" id="js-body" placeholder="type it" type="text" />
-                  </div>
-              </div>
-          </div>
-
-        <div className="row js-row-container">
-            <div className="col-sm-4">
-                <button className="btn btn-success"  onClick={()=>{this.alertButtonClick("success")}}>Add Success Alert</button>  
-            </div>
-        </div>
-        <div className="row js-row-container">
-              <div className="col-sm-4">
-                  <button className="btn btn-danger" onClick={()=>{this.alertButtonClick("error")}}>Add Error Alert</button>  
-              </div>
-        </div>
-        <div className="row js-row-container">
-              <div className="col-sm-4">
-                    <button className="btn btn-warning" onClick={()=>{this.alertButtonClick("info")}}>Add Info Alert</button> 
-              </div> 
         </div>
 
         <hr/>
 
-        <div className="js-alertbox-show-container">
+          <div className={`js-alertbox-show-container ${this.state.position}`}>
             <ReactCSSTransitionGroup
                 transitionName="fade"
                 transitionEnterTimeout={1000}
@@ -107,6 +126,7 @@ class App extends Component {
                                       title={item.title} 
                                       body={item.body} 
                                       type={item.type}
+                                      position={item.position}
                                       handleClick={this.removeItemFromArray} />
                         );
                     })

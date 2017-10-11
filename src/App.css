@@ -54,7 +54,33 @@
   display: inline-flex;
   flex-direction: column;
   position: absolute;
-  top: 0;
-  right: 0;
   width:294px;
+}
+
+.top-right{
+  top:0;
+  right:0;
+}
+
+.top-left{
+  top:0;
+  left:0;
+}
+
+.bottom-right{
+  bottom: 0;
+  right: 0;
+}
+
+.bottom-left{
+  bottom: 0;
+  left: 0;
+}
+
+.btn{
+  margin: 10px 30px;
+}
+
+.form-group{
+  margin: 15px 25px;
 }
